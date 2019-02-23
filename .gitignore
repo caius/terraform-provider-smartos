@@ -12,3 +12,5 @@
 *.out
 
 /terraform-provider-smartos
+
+/example/.terraform
