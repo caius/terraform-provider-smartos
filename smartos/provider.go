@@ -1,12 +1,11 @@
 package smartos
 
 import (
-	"errors"
-	"github.com/hashicorp/go-multierror"
 	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform/terraform"
 )
 
-func Provider() *schema.Provider {
+func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"host": {
