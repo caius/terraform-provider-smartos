@@ -4,8 +4,12 @@ dev:
 	@make example-plan
 
 .PHONY: build
-build:
+build: test
 	go build
+
+.PHONY: test
+test:
+	cd smartos/ && go test
 
 .PHONY: example-init
 example-init:
@@ -13,4 +17,4 @@ example-init:
 
 .PHONY: example-plan
 example-plan: example-init
-	cd example && terraform plan
+	cd example && terraform plan --input=false
