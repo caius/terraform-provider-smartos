@@ -1,1 +1,3 @@
-provider "smartos" {}
+provider "smartos" "oscar" {
+  host = "oscar"
+}
