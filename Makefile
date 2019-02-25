@@ -12,7 +12,7 @@ test:
 	cd smartos/ && go test
 
 .PHONY: example-init
-example-init:
+example-init: build
 	cd example && terraform init
 
 .PHONY: example-plan
