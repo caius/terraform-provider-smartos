@@ -16,6 +16,15 @@ github.com/bgentry/speakeasy v0.1.0/go.mod h1:+zsyZBPWlz7T6j88CTgSN5bM796AkVf0kB
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/bsm/go-vlq v0.0.0-20150828105119-ec6e8d4f5f4e/go.mod h1:N+BjUcTjSxc2mtRGSCPsat1kze3CUtvJN3/jTXlp29k=
+github.com/caius/goadm v0.0.0-20190225001908-12b1b19dfda3 h1:p1PMYSdizqj0r0+x2YjWG9LJN4HhKIJvIO4GY4hMWHE=
+github.com/caius/goadm v0.0.0-20190225002014-d208bc712d13 h1:z/2ivLXV8bH/arfYChs02P1sdwTWlwHtRS2hmdYMC90=
+github.com/caius/goadm v0.0.0-20190225002014-d208bc712d13/go.mod h1:IUdOUAsYMqmwv2JMtElfFla1lZzrJ6gZoIU7sQbakYI=
+github.com/caius/goadm v0.0.0-20190225002531-e63ebbd6119e h1:xxt6ViYdFEdqxb6iznLgCuRM3hrNWZw7cArrwkIOlJM=
+github.com/caius/goadm v0.0.0-20190225002531-e63ebbd6119e/go.mod h1:IUdOUAsYMqmwv2JMtElfFla1lZzrJ6gZoIU7sQbakYI=
+github.com/caius/goadm v0.0.0-20190225002821-8f9fda07e512 h1:yQ6EtqW1hVvBBDlvh4o5V7/2p5koI+odKTj45f0Qrw4=
+github.com/caius/goadm v0.0.0-20190225002821-8f9fda07e512/go.mod h1:IUdOUAsYMqmwv2JMtElfFla1lZzrJ6gZoIU7sQbakYI=
+github.com/caius/goadm v0.0.0-20190225002926-11adfc909723 h1:VVqSAtc6Mhp5OFLsWGD1ZV/ieGhQ3Czgc62qoHmmens=
+github.com/caius/goadm v0.0.0-20190225002926-11adfc909723/go.mod h1:IUdOUAsYMqmwv2JMtElfFla1lZzrJ6gZoIU7sQbakYI=
 github.com/caius/terraform-provider-smartos v0.0.0-20190223002434-33df0a4cc9c1 h1:85wV/XzQpfimi+WpADGZagG/2Wv6pvYlNPGVJoa8If4=
 github.com/cheggaaa/pb v1.0.27/go.mod h1:pQciLPpbU0oxA0h+VJYYLxO+XeDQb5pZijXscXHm81s=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
