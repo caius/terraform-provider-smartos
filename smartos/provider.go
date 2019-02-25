@@ -15,9 +15,9 @@ func Provider() terraform.ResourceProvider {
 				Required: true,
 			},
 		},
-		// DataSourcesMap: map[string]*schema.Resource{
-		//   "smartos_image": dataImage(),
-		// },
+		DataSourcesMap: map[string]*schema.Resource{
+			"smartos_image": dataSourceImage(),
+		},
 		// ResourcesMap: map[string]*schema.Resource{
 		//   "smartos_zone": resourceZone(),
 		// },
