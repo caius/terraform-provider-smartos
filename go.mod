@@ -3,7 +3,7 @@ module terraform-provider-smartos
 require (
 	github.com/apparentlymart/go-cidr v1.0.0 // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
-	github.com/caius/goadm v0.0.0-20190225002926-11adfc909723
+	github.com/caius/goadm v0.0.0
 	github.com/hashicorp/go-getter v1.1.0 // indirect
 	github.com/hashicorp/go-hclog v0.7.0 // indirect
 	github.com/hashicorp/go-plugin v0.0.0-20190220160451-3f118e8ee104 // indirect
@@ -21,3 +21,5 @@ require (
 	golang.org/x/crypto v0.0.0-20190222235706-ffb98f73852f // indirect
 	golang.org/x/net v0.0.0-20190213061140-3a22650c66bd // indirect
 )
+
+replace github.com/caius/goadm => ../goadm
