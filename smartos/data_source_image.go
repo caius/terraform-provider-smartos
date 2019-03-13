@@ -11,7 +11,13 @@ func dataSourceImage() *schema.Resource {
 		Schema: map[string]*schema.Schema{
 			"name": {
 				Type:     schema.TypeString,
-				Computed: true,
+				Computed: false,
+				Required: true,
+			},
+			"version": {
+				Type:     schema.TypeString,
+				Computed: false,
+				Required: true,
 			},
 		},
 	}
@@ -19,19 +25,24 @@ func dataSourceImage() *schema.Resource {
 
 func dataSourceImageRead(d *schema.ResourceData, meta interface{}) error {
 	// client := meta.(*Client)
-
-	// client.Imgadm.GetByName(d.Get("name"))
-
 	client := goadm.NewClient("127.0.0.1", "root", 2022)
 
 	images, err := client.Imgadm().ListImages()
 	if err != nil {
 		return err
 	}
-	image := images[0]
 
-	d.Set("id", image.Uuid)
-	d.Set("name", image.Name)
+	var foundImage goadm.Image
+
+	for _, image := range images {
+		if d.Get("name") == image.Name && d.Get("version") == image.Version {
+			foundImage = image
+		}
+	}
+
+	if foundImage.Name != "" {
+		d.Set("id", foundImage.Uuid)
+	}
 
 	return nil
 }
