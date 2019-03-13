@@ -1,6 +1,5 @@
 .PHONY: dev
 dev:
-	@make build
 	@make example-plan
 
 .PHONY: build
