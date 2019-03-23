@@ -2,7 +2,7 @@ package smartos
 
 import (
 	"errors"
-	"log"
+	"fmt"
 
 	"github.com/caius/goadm"
 )
@@ -13,17 +13,21 @@ type Config struct {
 	Port int
 }
 
-func (c Config) Client() (*goadm.Client, error) {
+func (c *Config) Client() (interface{}, error) {
 	err := c.validate()
 	if err != nil {
 		return nil, err
 	}
 
-	client := goadm.NewClient(c.Host, c.User, c.Port)
+	client := &goadm.Client{
+		Host: c.Host,
+		User: c.User,
+		Port: c.Port,
+	}
 
-	log.Printf("[INFO] SmartOS Provider configured for %s@%s:%d", c.Host, c.User, c.Port)
+	wankbucket(fmt.Sprintf("SmartOS Provider configured for %s@%s:%d", c.Host, c.User, c.Port))
 
-	return &client, nil
+	return client, nil
 }
 
 func (c Config) validate() error {

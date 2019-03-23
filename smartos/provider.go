@@ -1,6 +1,7 @@
 package smartos
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/hashicorp/terraform/helper/schema"
@@ -15,11 +16,13 @@ func Provider() terraform.ResourceProvider {
 				Required:    true,
 				Description: "The SmartOS host to connect to",
 			},
+
 			"user": {
 				Type:        schema.TypeString,
 				Required:    true,
 				Description: "The user to connect to the host as",
 			},
+
 			"port": {
 				Type:        schema.TypeInt,
 				Required:    true,
@@ -27,8 +30,12 @@ func Provider() terraform.ResourceProvider {
 			},
 		},
 
-		DataSourcesMap: map[string]*schema.Resource{
-			"smartos_image": dataSourceSmartosImage(),
+		// DataSourcesMap: map[string]*schema.Resource{
+		//   "smartos_image": dataSourceSmartosImage(),
+		// },
+
+		ResourcesMap: map[string]*schema.Resource{
+			"smartos_image": resourceSmartosImage(),
 		},
 
 		ConfigureFunc: providerConfigure,
@@ -36,7 +43,7 @@ func Provider() terraform.ResourceProvider {
 }
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
-	log.Printf("[INFO] providerConfigure called")
+	wankbucket("providerConfigure called")
 
 	config := Config{
 		Host: d.Get("host").(string),
@@ -44,5 +51,11 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 		Port: d.Get("port").(int),
 	}
 
+	wankbucket(fmt.Sprintf("Configured provider with config %+v", config))
+
 	return config.Client()
+}
+
+func wankbucket(message string) {
+	log.Printf("WANKBUCKET %s", message)
 }
